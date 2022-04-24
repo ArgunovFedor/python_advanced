@@ -12,6 +12,8 @@
 YYYYMMDD , где YYYY -- год, MM -- месяц (число от 1 до 12), DD -- число (от 01 до 31)
 Гарантируется, что переданная дата -- корректная (никаких 31 февраля)
 """
+from datetime import datetime
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -21,17 +23,39 @@ storage = {}
 
 @app.route("/add/<date>/<int:number>")
 def add(date: str, number: int):
-    # put something here
+    """
+    Лучше дату вводить в формате iso. Например, 2022-11-20
+    """
+    global storage
+    if date in storage.keys():
+        storage[date] += number
+    else:
+        storage[date] = number
+    return 'Успешно сохранено'
 
 
 @app.route("/calculate/<int:year>")
 def calculate_year(year: int):
-    # put something here
+    global storage
+    total_summ = 0
+    select_list = [date for date in storage.keys() if year == datetime.fromisoformat(date).year]
+    for date in select_list:
+        total_summ += storage[date]
+    return str(total_summ)
 
 
 @app.route("/calculate/<int:year>/<int:month>")
 def calculate_month(year: int, month: int):
-    # put something here
+    global storage
+    total_summ = 0
+    select_list = [date for date in storage.keys()
+                   if
+                   year == datetime.fromisoformat(date).year
+                   and
+                   month == datetime.fromisoformat(date).month]
+    for date in select_list:
+        total_summ += storage[date]
+    return str(total_summ)
 
 
 if __name__ == "__main__":

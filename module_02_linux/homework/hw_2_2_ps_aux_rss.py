@@ -24,8 +24,14 @@ def _sizeof_fmt(num, suffix="B"):
 
 
 def get_summary_rss(ps_output_file_path: str) -> str:
-    """put your code here"""
+    with open(ps_output_file_path, 'r', encoding='utf-8') as file:
+        next(file)
+        total_size = 0
+        for string in file:
+            string_list = string.split()
+            total_size += int(string_list[5])
+    return 'Суммарный объем: ' + _sizeof_fmt(total_size)
 
 
-if __name__ == "__main__":
-    print(get_summary_rss("<place ps aux output file path here>"))
+if __name__ == '__main__':
+    print(get_summary_rss('output_file.txt'))

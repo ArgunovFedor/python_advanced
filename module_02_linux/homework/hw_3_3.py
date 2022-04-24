@@ -26,7 +26,31 @@
 1....................... -> <пустая строка>
 
 """
+import array
 
 
 def decrypt(s: str) -> str:
-    """Put your code here"""
+    result = list(s)
+    i = 0
+    while i != len(result) and len(result) > 0:
+        if result[i] == '.':
+            if i == len(result) - 1:
+                'Если точка стоит последним символом'
+                result.pop(i)
+                i += 1
+                break
+            if result[i+1] == '.':
+                'Должно сработать правило двух точек'
+                result.pop(i)
+                result.pop(i)
+                result.pop(i-1)
+                if i > 1:
+                    i -= 2
+                continue
+            else:
+                result.pop(i)
+                continue
+        i += 1
+
+    return ''.join(result)
+

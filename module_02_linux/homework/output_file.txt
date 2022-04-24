@@ -1,0 +1,244 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2 168828 11252 ?        Ss   08:55   0:04 /sbin/init splash
+root           2  0.0  0.0      0     0 ?        S    08:55   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   08:55   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   08:55   0:00 [rcu_par_gp]
+root           6  0.0  0.0      0     0 ?        I<   08:55   0:00 [kworker/0:0H-events_highpri]
+root           9  0.0  0.0      0     0 ?        I<   08:55   0:00 [mm_percpu_wq]
+root          10  0.0  0.0      0     0 ?        S    08:55   0:00 [rcu_tasks_rude_]
+root          11  0.0  0.0      0     0 ?        S    08:55   0:00 [rcu_tasks_trace]
+root          12  0.0  0.0      0     0 ?        S    08:55   0:00 [ksoftirqd/0]
+root          13  0.0  0.0      0     0 ?        I    08:55   0:11 [rcu_sched]
+root          14  0.0  0.0      0     0 ?        S    08:55   0:00 [migration/0]
+root          15  0.0  0.0      0     0 ?        S    08:55   0:00 [idle_inject/0]
+root          16  0.0  0.0      0     0 ?        S    08:55   0:00 [cpuhp/0]
+root          17  0.0  0.0      0     0 ?        S    08:55   0:00 [cpuhp/1]
+root          18  0.0  0.0      0     0 ?        S    08:55   0:00 [idle_inject/1]
+root          19  0.0  0.0      0     0 ?        S    08:55   0:00 [migration/1]
+root          20  0.0  0.0      0     0 ?        S    08:55   0:00 [ksoftirqd/1]
+root          22  0.0  0.0      0     0 ?        I<   08:55   0:00 [kworker/1:0H-events_highpri]
+root          23  0.0  0.0      0     0 ?        S    08:55   0:00 [cpuhp/2]
+root          24  0.0  0.0      0     0 ?        S    08:55   0:00 [idle_inject/2]
+root          25  0.0  0.0      0     0 ?        S    08:55   0:00 [migration/2]
+root          26  0.0  0.0      0     0 ?        S    08:55   0:00 [ksoftirqd/2]
+root          28  0.0  0.0      0     0 ?        I<   08:55   0:00 [kworker/2:0H-events_highpri]
+root          29  0.0  0.0      0     0 ?        S    08:55   0:00 [cpuhp/3]
+root          30  0.0  0.0      0     0 ?        S    08:55   0:00 [idle_inject/3]
+root          31  0.0  0.0      0     0 ?        S    08:55   0:00 [migration/3]
+root          32  0.0  0.0      0     0 ?        S    08:55   0:01 [ksoftirqd/3]
+root          34  0.0  0.0      0     0 ?        I<   08:55   0:00 [kworker/3:0H-kblockd]
+root          35  0.0  0.0      0     0 ?        S    08:55   0:00 [kdevtmpfs]
+root          36  0.0  0.0      0     0 ?        I<   08:55   0:00 [netns]
+root          37  0.0  0.0      0     0 ?        I<   08:55   0:00 [inet_frag_wq]
+root          38  0.0  0.0      0     0 ?        S    08:55   0:00 [kauditd]
+root          39  0.0  0.0      0     0 ?        S    08:55   0:00 [khungtaskd]
+root          40  0.0  0.0      0     0 ?        S    08:55   0:00 [oom_reaper]
+root          41  0.0  0.0      0     0 ?        I<   08:55   0:00 [writeback]
+root          42  0.0  0.0      0     0 ?        S    08:55   0:01 [kcompactd0]
+root          43  0.0  0.0      0     0 ?        SN   08:55   0:00 [ksmd]
+root          44  0.0  0.0      0     0 ?        SN   08:55   0:00 [khugepaged]
+root          91  0.0  0.0      0     0 ?        I<   08:55   0:00 [kintegrityd]
+root          92  0.0  0.0      0     0 ?        I<   08:55   0:00 [kblockd]
+root          93  0.0  0.0      0     0 ?        I<   08:55   0:00 [blkcg_punt_bio]
+root          94  0.0  0.0      0     0 ?        I<   08:55   0:00 [tpm_dev_wq]
+root          95  0.0  0.0      0     0 ?        I<   08:55   0:00 [ata_sff]
+root          96  0.0  0.0      0     0 ?        I<   08:55   0:00 [md]
+root          97  0.0  0.0      0     0 ?        I<   08:55   0:00 [edac-poller]
+root          98  0.0  0.0      0     0 ?        I<   08:55   0:00 [devfreq_wq]
+root         100  0.0  0.0      0     0 ?        S    08:55   0:00 [watchdogd]
+root         102  0.0  0.0      0     0 ?        I<   08:55   0:00 [kworker/1:1H-kblockd]
+root         104  0.0  0.0      0     0 ?        S    08:55   0:04 [kswapd0]
+root         105  0.0  0.0      0     0 ?        S    08:55   0:00 [ecryptfs-kthrea]
+root         108  0.0  0.0      0     0 ?        I<   08:55   0:00 [kthrotld]
+root         109  0.0  0.0      0     0 ?        I<   08:55   0:00 [acpi_thermal_pm]
+root         111  0.0  0.0      0     0 ?        S    08:55   0:00 [scsi_eh_0]
+root         112  0.0  0.0      0     0 ?        I<   08:55   0:00 [scsi_tmf_0]
+root         113  0.0  0.0      0     0 ?        S    08:55   0:00 [scsi_eh_1]
+root         114  0.0  0.0      0     0 ?        I<   08:55   0:00 [scsi_tmf_1]
+root         115  0.0  0.0      0     0 ?        I<   08:55   0:00 [vfio-irqfd-clea]
+root         116  0.0  0.0      0     0 ?        I<   08:55   0:00 [mld]
+root         117  0.0  0.0      0     0 ?        I<   08:55   0:00 [kworker/0:1H-kblockd]
+root         118  0.0  0.0      0     0 ?        I<   08:55   0:00 [ipv6_addrconf]
+root         128  0.0  0.0      0     0 ?        I<   08:55   0:00 [kstrp]
+root         131  0.0  0.0      0     0 ?        I<   08:55   0:00 [zswap-shrink]
+root         132  0.0  0.0      0     0 ?        I<   08:55   0:00 [kworker/u9:0]
+root         137  0.0  0.0      0     0 ?        I<   08:55   0:00 [charger_manager]
+root         138  0.0  0.0      0     0 ?        I<   08:55   0:00 [kworker/3:1H-kblockd]
+root         175  0.0  0.0      0     0 ?        I<   08:55   0:00 [kworker/2:1H-kblockd]
+root         182  0.0  0.0      0     0 ?        S    08:55   0:00 [scsi_eh_2]
+root         183  0.0  0.0      0     0 ?        I<   08:55   0:00 [scsi_tmf_2]
+root         206  0.0  0.0      0     0 ?        S    08:55   0:01 [jbd2/sda5-8]
+root         207  0.0  0.0      0     0 ?        I<   08:55   0:00 [ext4-rsv-conver]
+root         247  0.0  0.3  51756 14884 ?        S<s  08:55   0:01 /lib/systemd/systemd-journald
+root         268  0.0  0.0      0     0 ?        I<   08:55   0:00 [ipmi-msghandler]
+root         272  0.0  0.0      0     0 ?        S<   08:55   0:00 [loop0]
+root         277  0.0  0.1  24172  6552 ?        Ss   08:55   0:00 /lib/systemd/systemd-udevd
+root         279  0.0  0.0      0     0 ?        I<   08:55   0:00 [ttm_swap]
+root         280  0.0  0.0      0     0 ?        S    08:55   0:03 [irq/18-vmwgfx]
+root         281  0.0  0.0      0     0 ?        S    08:55   0:00 [card0-crtc0]
+root         282  0.0  0.0      0     0 ?        S    08:55   0:00 [card0-crtc1]
+root         283  0.0  0.0      0     0 ?        S    08:55   0:00 [card0-crtc2]
+root         284  0.0  0.0      0     0 ?        S    08:55   0:00 [card0-crtc3]
+root         285  0.0  0.0      0     0 ?        S    08:55   0:00 [card0-crtc4]
+root         286  0.0  0.0      0     0 ?        S    08:55   0:00 [card0-crtc5]
+root         287  0.0  0.0      0     0 ?        S    08:55   0:00 [card0-crtc6]
+root         288  0.0  0.0      0     0 ?        S    08:55   0:00 [card0-crtc7]
+root         289  0.0  0.0      0     0 ?        S<   08:55   0:00 [loop1]
+root         290  0.0  0.0      0     0 ?        S<   08:55   0:00 [loop2]
+root         295  0.0  0.0      0     0 ?        S<   08:55   0:00 [loop3]
+root         296  0.0  0.0      0     0 ?        S<   08:55   0:00 [loop4]
+root         297  0.0  0.0      0     0 ?        S<   08:55   0:00 [loop5]
+root         326  0.0  0.0      0     0 ?        I<   08:55   0:00 [iprt-VBoxWQueue]
+root         345  0.0  0.0      0     0 ?        I<   08:55   0:00 [cryptd]
+systemd+     538  0.0  0.2  24000 10452 ?        Ss   08:55   0:00 /lib/systemd/systemd-resolved
+root         566  0.0  0.2 242308  9132 ?        Ssl  08:55   0:00 /usr/lib/accountsservice/accounts-daemon
+root         567  0.0  0.0   2548   704 ?        Ss   08:55   0:01 /usr/sbin/acpid
+avahi        571  0.0  0.0   8532  3116 ?        Ss   08:55   0:00 avahi-daemon: running [user-VirtualBox.local]
+root         574  0.0  0.0   9428  2872 ?        Ss   08:55   0:00 /usr/sbin/cron -f
+root         575  0.0  0.1  28180  7688 ?        Ss   08:55   0:00 /usr/sbin/cupsd -l
+message+     578  0.0  0.1   8900  5316 ?        Ss   08:55   0:04 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         580  0.0  0.4 339396 16952 ?        Ssl  08:55   0:06 /usr/sbin/NetworkManager --no-daemon
+root         585  0.0  0.0  81832  3584 ?        Ssl  08:55   0:00 /usr/sbin/irqbalance --foreground
+root         587  0.0  0.4  39336 17612 ?        Ss   08:55   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         588  0.0  0.2 239096 10560 ?        Ssl  08:55   0:00 /usr/lib/policykit-1/polkitd --no-debug
+syslog       592  0.0  0.1 224352  4224 ?        Ssl  08:55   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         601  0.0  0.1 235888  6172 ?        Ssl  08:55   0:00 /usr/libexec/switcheroo-control
+root         604  0.0  0.1  16744  6600 ?        Ss   08:55   0:00 /lib/systemd/systemd-logind
+root         606  0.0  0.2 395480 11744 ?        Ssl  08:55   0:00 /usr/lib/udisks2/udisksd
+root         611  0.0  0.0  13684  3540 ?        Ss   08:55   0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+avahi        617  0.0  0.0   8348   300 ?        S    08:55   0:00 avahi-daemon: chroot helper
+root         649  0.0  0.2 178392 10812 ?        Ssl  08:55   0:00 /usr/sbin/cups-browsed
+root         671  0.0  0.1 314464  7952 ?        Ssl  08:55   0:00 /usr/sbin/ModemManager
+root         682  0.0  0.4 118124 19664 ?        Ssl  08:55   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         717  0.0  0.1 239696  7940 ?        Ssl  08:55   0:00 /usr/sbin/gdm3
+root         719  0.0  0.0 361252  2404 ?        Sl   08:55   0:03 /usr/sbin/VBoxService
+root         737  0.0  0.2 314784  9268 ?        Sl   08:55   0:00 gdm-session-worker [pam/gdm-autologin]
+user         783  0.0  0.1  19260  7788 ?        Ss   08:55   0:01 /lib/systemd/systemd --user
+user         784  0.0  0.0 103240   940 ?        S    08:55   0:00 (sd-pam)
+user         789  0.0  0.3 1933668 14360 ?       S<sl 08:55   0:13 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+user         791  0.0  0.3 585556 13448 ?        SNsl 08:55   0:00 /usr/libexec/tracker-miner-fs
+user         794  0.0  0.1 535560  7320 ?        SLl  08:55   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+user         798  0.0  0.1 164232  5828 tty2     Ssl+ 08:55   0:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+rtkit        801  0.0  0.0 152936  2792 ?        SNsl 08:55   0:00 /usr/libexec/rtkit-daemon
+user         802  0.0  0.1  12040  5496 ?        Ss   08:55   0:02 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+user         806  2.3  3.4 364768 139332 tty2    Sl+  08:55   6:54 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+user         809  0.0  0.1 240060  6864 ?        Ssl  08:55   0:00 /usr/libexec/gvfsd
+user         815  0.0  0.1 382064  7168 ?        Sl   08:55   0:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+user         824  0.0  0.2 317872 10148 ?        Ssl  08:55   0:00 /usr/libexec/gvfs-udisks2-volume-monitor
+user         841  0.0  0.1 238196  5916 ?        Ssl  08:55   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+user         845  0.0  0.1 316972  7696 ?        Ssl  08:55   0:01 /usr/libexec/gvfs-afc-volume-monitor
+user         850  0.0  0.1 236124  5252 ?        Ssl  08:55   0:00 /usr/libexec/gvfs-goa-volume-monitor
+user         854  0.0  0.3 547936 15552 ?        Sl   08:55   0:00 /usr/libexec/goa-daemon
+user         867  0.0  0.2 319084  9108 ?        Sl   08:55   0:00 /usr/libexec/goa-identity-service
+user         872  0.0  0.1 235920  5672 ?        Ssl  08:55   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+root         878  0.0  0.2 252484  8856 ?        Ssl  08:55   0:00 /usr/lib/upower/upowerd
+user         890  0.0  0.3 190884 12812 tty2     Sl+  08:55   0:00 /usr/libexec/gnome-session-binary --systemd --systemd --session=ubuntu
+user         971  0.0  0.0  22852    40 ?        S    08:55   0:00 /usr/bin/VBoxClient --clipboard
+user         972  0.0  0.0 155120   872 ?        Sl   08:55   0:00 /usr/bin/VBoxClient --clipboard
+user         983  0.0  0.0  22852    28 ?        S    08:55   0:00 /usr/bin/VBoxClient --seamless
+user         985  0.0  0.0 155088  1944 ?        Sl   08:55   0:00 /usr/bin/VBoxClient --seamless
+user         990  0.0  0.0  22852    24 ?        S    08:55   0:00 /usr/bin/VBoxClient --draganddrop
+user         991  0.2  0.0 155604  1900 ?        Sl   08:55   0:45 /usr/bin/VBoxClient --draganddrop
+user         995  0.0  0.0  22852    32 ?        S    08:55   0:00 /usr/bin/VBoxClient --vmsvga
+user         996  0.0  0.0 157368  2476 ?        Sl   08:55   0:00 /usr/bin/VBoxClient --vmsvga
+user         998  0.0  0.0   6040    36 ?        Ss   08:55   0:00 /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+user        1026  0.0  0.2 309756  8508 ?        Ssl  08:55   0:00 /usr/libexec/at-spi-bus-launcher
+user        1031  0.0  0.0   7376  3712 ?        S    08:55   0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+user        1054  0.0  0.0  90288  3744 ?        Ssl  08:55   0:00 /usr/libexec/gnome-session-ctl --monitor
+user        1061  0.0  0.3 561308 14972 ?        Ssl  08:55   0:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+user        1075  6.5  8.1 4980596 325948 ?      Ssl  08:55  19:11 /usr/bin/gnome-shell
+whoopsie    1109  0.0  0.3 327244 13860 ?        Ssl  08:55   0:00 /usr/bin/whoopsie -f
+kernoops    1110  0.0  0.0  11260   200 ?        Ss   08:55   0:00 /usr/sbin/kerneloops --test
+kernoops    1114  0.0  0.0  11260   440 ?        Ss   08:55   0:00 /usr/sbin/kerneloops
+user        1155  0.0  0.2 315348  9456 ?        Sl   08:55   0:10 ibus-daemon --panel disable --xim
+user        1159  0.0  0.1 166948  7400 ?        Sl   08:55   0:00 /usr/libexec/ibus-memconf
+user        1160  0.0  0.4 278984 19952 ?        Sl   08:55   0:03 /usr/libexec/ibus-extension-gtk3
+user        1162  0.0  0.4 201252 19572 ?        Sl   08:55   0:06 /usr/libexec/ibus-x11 --kill-daemon
+user        1164  0.0  0.1 240616  7784 ?        Sl   08:55   0:00 /usr/libexec/ibus-portal
+user        1176  0.0  0.1 162908  5768 ?        Sl   08:55   0:01 /usr/libexec/at-spi2-registryd --use-gnome-session
+user        1181  0.0  0.1 235988  4172 ?        Ssl  08:55   0:00 /usr/libexec/xdg-permission-store
+user        1183  0.0  0.2 581760 12040 ?        Sl   08:55   0:00 /usr/libexec/gnome-shell-calendar-server
+user        1192  0.0  0.4 1070952 16540 ?       Ssl  08:55   0:00 /usr/libexec/evolution-source-registry
+user        1201  0.0  0.4 839388 17084 ?        Ssl  08:55   0:00 /usr/libexec/evolution-calendar-factory
+user        1216  0.0  0.1 156228  5212 ?        Sl   08:55   0:00 /usr/libexec/dconf-service
+user        1217  0.0  0.3 673968 13052 ?        Ssl  08:55   0:00 /usr/libexec/evolution-addressbook-factory
+user        1224  0.0  0.1 162532  5780 ?        Ssl  08:55   0:00 /usr/libexec/gvfsd-metadata
+user        1243  0.0  0.4 2660600 18852 ?       Sl   08:55   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+user        1251  0.0  0.2 318104  9512 ?        Sl   08:55   0:00 /usr/libexec/gvfsd-trash --spawner :1.4 /org/gtk/gvfs/exec_spaw/0
+user        1261  0.0  0.2 314400  8236 ?        Ssl  08:55   0:00 /usr/libexec/gsd-a11y-settings
+user        1262  0.0  0.5 571284 22940 ?        Ssl  08:55   0:00 /usr/libexec/gsd-color
+user        1264  0.0  0.3 374840 14304 ?        Ssl  08:55   0:00 /usr/libexec/gsd-datetime
+user        1267  0.0  0.2 314640  8728 ?        Ssl  08:55   0:00 /usr/libexec/gsd-housekeeping
+user        1268  0.0  0.4 349288 19200 ?        Ssl  08:55   0:00 /usr/libexec/gsd-keyboard
+user        1271  0.0  0.5 904584 20928 ?        Ssl  08:55   0:00 /usr/libexec/gsd-media-keys
+user        1272  0.0  0.6 616584 25624 ?        Ssl  08:55   0:00 /usr/libexec/gsd-power
+user        1273  0.0  0.2 248500  9660 ?        Ssl  08:55   0:00 /usr/libexec/gsd-print-notifications
+user        1275  0.0  0.1 457384  5380 ?        Ssl  08:55   0:00 /usr/libexec/gsd-rfkill
+user        1277  0.0  0.1 235792  5340 ?        Ssl  08:55   0:00 /usr/libexec/gsd-screensaver-proxy
+user        1278  0.0  0.2 469504 10176 ?        Ssl  08:55   0:00 /usr/libexec/gsd-sharing
+user        1279  0.0  0.1 318564  6924 ?        Ssl  08:55   0:00 /usr/libexec/gsd-smartcard
+user        1281  0.0  0.2 322268  9644 ?        Ssl  08:55   0:00 /usr/libexec/gsd-sound
+user        1288  0.0  0.2 388352  8928 ?        Ssl  08:55   0:00 /usr/libexec/gsd-usb-protection
+user        1293  0.0  0.4 348836 18488 ?        Ssl  08:55   0:00 /usr/libexec/gsd-wacom
+user        1298  0.0  0.2 318764  8548 ?        Ssl  08:55   0:00 /usr/libexec/gsd-wwan
+user        1302  0.0  0.5 349948 20108 ?        Ssl  08:55   0:00 /usr/libexec/gsd-xsettings
+user        1305  0.0  0.6 641128 24264 ?        Sl   08:55   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+user        1308  0.0  0.1 231800  4864 ?        Sl   08:55   0:00 /usr/libexec/gsd-disk-utility-notify
+user        1364  0.0  0.3 342472 13100 ?        Sl   08:55   0:00 /usr/libexec/gsd-printer
+user        1379  0.0  0.2 167076  8588 ?        Sl   08:55   0:02 /usr/libexec/ibus-engine-simple
+colord      1397  0.0  0.3 249348 14156 ?        Ssl  08:55   0:00 /usr/libexec/colord
+user        1488  0.0  0.5 863188 22944 ?        Sl   08:56   0:00 /usr/bin/gnome-calendar --gapplication-service
+user        1494  0.1  0.9 817928 37032 ?        Ssl  08:56   0:19 /usr/libexec/gnome-terminal-server
+user        1568  0.0  0.0  10624  2192 pts/0    Ss+  08:56   0:00 bash
+user        1577  0.0  0.6 424668 25256 ?        Sl   08:57   0:01 update-notifier
+user        1744  0.0  0.2 610676  9180 ?        Ssl  09:14   0:00 /usr/libexec/xdg-desktop-portal
+user        1748  0.0  0.1 605524  6108 ?        Ssl  09:14   0:00 /usr/libexec/xdg-document-portal
+user        1758  0.0  0.5 497308 21312 ?        Ssl  09:14   0:01 /usr/libexec/xdg-desktop-portal-gtk
+user        2082  0.0  0.0  11080  3696 pts/1    Ss+  09:15   0:00 bash
+user        3709  0.0  0.6 469420 26724 ?        SLl  09:30   0:00 /usr/bin/seahorse --gapplication-service
+root        6328  0.0  0.0      0     0 ?        I    11:06   0:01 [kworker/2:1-events]
+root        7843  0.0  0.0      0     0 ?        S<   11:48   0:00 [loop6]
+root        7952  0.0  0.0      0     0 ?        S<   11:51   0:01 [loop7]
+user        8061  0.0  0.0   2616  1624 ?        S    11:54   0:00 /bin/sh /snap/pycharm-professional/280/bin/pycharm.sh
+user        8104 33.6 37.8 6447456 1519980 ?     SLl  11:54  39:16 /snap/pycharm-professional/280/jbr/bin/java -classpath /snap/pycharm-professional/280/lib/util.jar:/snap/pycharm-professional/280/lib/app.jar:/snap/pycharm-professional/280/lib/3rd-party-rt.jar:/snap/pycharm-professional/280/lib/jna.jar:/snap/pycharm-professional/280/lib/platform-statistics-devkit.jar:/snap/pycharm-professional/280/lib/jps-model.jar:/snap/pycharm-professional/280/lib/rd-core.jar:/snap/pycharm-professional/280/lib/rd-framework.jar:/snap/pycharm-professional/280/lib/stats.jar:/snap/pycharm-professional/280/lib/protobuf.jar:/snap/pycharm-professional/280/lib/external-system-rt.jar:/snap/pycharm-professional/280/lib/forms_rt.jar:/snap/pycharm-professional/280/lib/intellij-test-discovery.jar:/snap/pycharm-professional/280/lib/rd-swing.jar:/snap/pycharm-professional/280/lib/groovy.jar:/snap/pycharm-professional/280/lib/annotations-java5.jar:/snap/pycharm-professional/280/lib/async-profiler.jar:/snap/pycharm-professional/280/lib/byte-buddy-agent.jar:/snap/pycharm-professional/280/lib/error-prone-annotations.jar:/snap/pycharm-professional/280/lib/externalProcess-rt.jar:/snap/pycharm-professional/280/lib/grpc-netty-shaded.jar:/snap/pycharm-professional/280/lib/intellij-coverage-agent-1.0.656.jar:/snap/pycharm-professional/280/lib/jetbrains-annotations.jar:/snap/pycharm-professional/280/lib/jsch-agent.jar:/snap/pycharm-professional/280/lib/junit4.jar:/snap/pycharm-professional/280/lib/junixsocket-core.jar:/snap/pycharm-professional/280/lib/lz4-java.jar:/snap/pycharm-professional/280/lib/platform-objectSerializer-annotations.jar:/snap/pycharm-professional/280/lib/pty4j.jar:/snap/pycharm-professional/280/lib/rd-text.jar:/snap/pycharm-professional/280/lib/util_rt.jar:/snap/pycharm-professional/280/lib/winp.jar:/snap/pycharm-professional/280/lib/dbus-java-3.2.1.jar:/snap/pycharm-professional/280/lib/java-utils-1.0.6.jar:/snap/pycharm-professional/280/lib/jnr-unixsocket-0.23.jar:/snap/pycharm-professional/280/lib/jnr-ffi-2.1.10.jar:/snap/pycharm-professional/280/lib/jffi-1.2.19.jar:/snap/pycharm-professional/280/lib/jffi-1.2.19-native.jar:/snap/pycharm-professional/280/lib/asm-7.1.jar:/snap/pycharm-professional/280/lib/asm-commons-7.1.jar:/snap/pycharm-professional/280/lib/asm-analysis-7.1.jar:/snap/pycharm-professional/280/lib/asm-tree-7.1.jar:/snap/pycharm-professional/280/lib/asm-util-7.1.jar:/snap/pycharm-professional/280/lib/jnr-a64asm-1.0.0.jar:/snap/pycharm-professional/280/lib/jnr-x86asm-1.0.2.jar:/snap/pycharm-professional/280/lib/jnr-constants-0.9.12.jar:/snap/pycharm-professional/280/lib/jnr-enxio-0.21.jar:/snap/pycharm-professional/280/lib/jnr-posix-3.0.50.jar -Xms128m -Xmx750m -XX:ReservedCodeCacheSize=512m -XX:+IgnoreUnrecognizedVMOptions -XX:+UseG1GC -XX:SoftRefLRUPolicyMSPerMB=50 -XX:CICompilerCount=2 -XX:+HeapDumpOnOutOfMemoryError -XX:-OmitStackTraceInFastThrow -ea -Dsun.io.useCanonCaches=false -Djdk.http.auth.tunneling.disabledSchemes="" -Djdk.attach.allowAttachSelf=true -Djdk.module.illegalAccess.silent=true -Dkotlinx.coroutines.debug=off -Dsun.tools.attach.tmp.only=true -XX:ErrorFile=/home/user/java_error_in_pycharm_%p.log -XX:HeapDumpPath=/home/user/java_error_in_pycharm_.hprof -Djb.vmOptionsFile=/snap/pycharm-professional/280/bin/pycharm64.vmoptions -Djava.system.class.loader=com.intellij.util.lang.PathClassLoader -Didea.strict.classpath=true -Didea.vendor.name=JetBrains -Didea.paths.selector=PyCharm2022.1 -Didea.platform.prefix=Python -Dsplash=true com.intellij.idea.Main
+user        8201  0.0  0.2 280068 10052 ?        Sl   11:55   0:00 /usr/libexec/gvfsd-http --spawner :1.4 /org/gtk/gvfs/exec_spaw/1
+user       10775  0.0  0.0   3476  1996 ?        S    12:01   0:01 /snap/pycharm-professional/280/bin/fsnotifier
+user       10951  0.0  0.1  11360  5048 pts/2    Ss+  12:02   0:00 /bin/bash --rcfile /snap/pycharm-professional/280/plugins/terminal/jediterm-bash.in -i
+uuidd      11234  0.0  0.0  10608   992 ?        Ss   12:09   0:00 /usr/sbin/uuidd --socket-activation
+user       12168  7.7 10.8 3644580 436772 ?      Sl   12:33   6:03 /usr/lib/firefox/firefox http://127.0.0.1:5000
+user       12253  0.1  2.5 2411060 100780 ?      Sl   12:33   0:05 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       12494  0.0  2.4 2421228 97636 ?       Sl   12:33   0:01 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 4539 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       12753  0.1  2.7 2424308 111604 ?      Sl   12:33   0:05 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 5245 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       12755  0.5  4.0 2544084 161508 ?      Sl   12:33   0:24 /usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 5245 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+root       12993  0.0  0.0      0     0 ?        I    12:37   0:02 [kworker/3:1-cgroup_destroy]
+root       13013  0.0  0.0      0     0 ?        I    12:38   0:01 [kworker/1:2-mm_percpu_wq]
+root       13017  0.0  0.0      0     0 ?        I    12:38   0:00 [kworker/0:0-mm_percpu_wq]
+root       13047  0.0  0.0      0     0 ?        I    12:40   0:00 [kworker/u8:0-events_power_efficient]
+root       13334  0.0  0.0      0     0 ?        I    13:06   0:00 [kworker/u8:2-events_power_efficient]
+root       13385  0.0  0.0      0     0 ?        S<   13:06   0:00 [loop8]
+root       13493  0.0  0.0      0     0 ?        S<   13:06   0:00 [loop9]
+root       13509  0.1  0.7 1096004 31924 ?       Ssl  13:06   0:04 /usr/lib/snapd/snapd
+user       13811  0.1  2.8 2433652 114912 ?      Sl   13:07   0:04 /usr/lib/firefox/firefox -contentproc -childID 7 -isForBrowser -prefsLen 8155 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       15647  0.0  0.0   6040  3724 ?        S    13:10   0:00 /usr/bin/ssh-agent -D -a /run/user/1000/keyring/.ssh
+user       15799  0.6  4.2 2507732 172092 ?      Sl   13:12   0:15 /usr/lib/firefox/firefox -contentproc -childID 11 -isForBrowser -prefsLen 8155 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       15826  0.0  2.2 2395604 88768 ?       Sl   13:12   0:00 /usr/lib/firefox/firefox -contentproc -childID 12 -isForBrowser -prefsLen 8155 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       15852  0.0  2.5 2411316 102344 ?      Sl   13:12   0:00 /usr/lib/firefox/firefox -contentproc -childID 13 -isForBrowser -prefsLen 8155 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       15878  2.1  4.9 2601008 199744 ?      Sl   13:12   0:49 /usr/lib/firefox/firefox -contentproc -childID 14 -isForBrowser -prefsLen 8155 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       15951  0.1  2.8 2433332 114404 ?      Sl   13:13   0:02 /usr/lib/firefox/firefox -contentproc -childID 16 -isForBrowser -prefsLen 8155 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       16248  0.0  0.9 203812 39156 ?        Sl   13:17   0:00 /usr/lib/firefox/firefox -contentproc -parentBuildID 20220330194208 -prefsLen 8450 -prefMapSize 247620 -appDir /usr/lib/firefox/browser 12168 true rdd
+root       16257  0.0  0.0      0     0 ?        I    13:17   0:00 [kworker/1:1-cgroup_destroy]
+user       16384  0.0  0.1  11296  5244 pts/3    Ss   13:19   0:00 /bin/bash --rcfile /snap/pycharm-professional/280/plugins/terminal/jediterm-bash.in -i
+root       16430  0.0  0.0      0     0 ?        I    13:19   0:00 [kworker/2:0-events]
+user       16434  0.1  2.5 2409752 101248 ?      Sl   13:19   0:02 /usr/lib/firefox/firefox -contentproc -childID 22 -isForBrowser -prefsLen 8559 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       16509  0.1  3.2 2435924 131156 ?      Sl   13:21   0:02 /usr/lib/firefox/firefox -contentproc -childID 24 -isForBrowser -prefsLen 8559 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       16752  0.0  1.8 2387664 74176 ?       Sl   13:26   0:00 /usr/lib/firefox/firefox -contentproc -childID 25 -isForBrowser -prefsLen 8559 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       16785  0.3  0.8 266956 35936 ?        Sl   13:27   0:05 /home/user/PycharmProjects/python_advanced/venv/bin/python /snap/pycharm-professional/280/plugins/python/helpers/pydev/pydevd.py --multiprocess --qt-support=auto --client 127.0.0.1 --port 34985 --file /home/user/PycharmProjects/python_advanced/module_02_linux/homework/hw_2_1_max_number.py
+user       16877  0.0  1.8 2387664 73096 ?       Sl   13:31   0:00 /usr/lib/firefox/firefox -contentproc -childID 26 -isForBrowser -prefsLen 8559 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+root       16899  0.0  0.0      0     0 ?        I    13:31   0:00 [kworker/0:2]
+root       16900  0.0  0.0      0     0 ?        I    13:31   0:00 [kworker/3:0-inet_frag_wq]
+user       16906  0.0  1.8 2387660 72608 ?       Sl   13:31   0:00 /usr/lib/firefox/firefox -contentproc -childID 27 -isForBrowser -prefsLen 8559 -prefMapSize 247620 -jsInitLen 277748 -parentBuildID 20220330194208 -appDir /usr/lib/firefox/browser 12168 true tab
+user       17054  4.9  0.9 488204 36616 ?        Sl   13:33   0:51 /home/user/PycharmProjects/python_advanced/venv/bin/python /snap/pycharm-professional/280/plugins/python/helpers/pydev/pydevd.py --module --port 34985 --client 127.0.0.1 --multiprocess --file hw_2_1_max_number
+root       17099  0.0  0.0      0     0 ?        I    13:40   0:00 [kworker/u8:1-events_unbound]
+root       17200  0.0  0.0      0     0 ?        I    13:50   0:00 [kworker/1:0-cgroup_destroy]
+root       17201  0.0  0.0      0     0 ?        I    13:50   0:00 [kworker/3:2-mm_percpu_wq]
+user       17204  0.0  0.0  11540  3352 pts/3    R+   13:51   0:00 ps aux
