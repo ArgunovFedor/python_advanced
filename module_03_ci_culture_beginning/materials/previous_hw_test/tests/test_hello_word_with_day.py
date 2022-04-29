@@ -1,6 +1,7 @@
+import datetime
 import unittest
 
-from module_03_ci_culture_beginning.materials.previous_hw_test.hello_word_with_day import app
+from module_03_ci_culture_beginning.materials.previous_hw_test.hello_word_with_day import app, day_to_word_map
 
 
 class TestMaxNumberApp(unittest.TestCase):
@@ -15,3 +16,11 @@ class TestMaxNumberApp(unittest.TestCase):
         response = self.app.get(self.base_url + username)
         response_text = response.data.decode()
         self.assertTrue(username in response_text)
+
+    def test_can_get_correct_username_with_weekdate(self):
+        username = 'username'
+        current_day = datetime.datetime.today().weekday()
+        response = self.app.get(self.base_url + username)
+        response_text = response.data.decode()
+        self.assertTrue(username in response_text)
+        self.assertTrue(day_to_word_map[current_day] in response_text)

@@ -18,7 +18,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
-storage = {}
+storage = {
+    '1994-12-21': 150,
+    '2022-04-25': 200,
+}
 
 
 @app.route("/add/<date>/<int:number>")
@@ -27,6 +30,7 @@ def add(date: str, number: int):
     Лучше дату вводить в формате iso. Например, 2022-11-20
     """
     global storage
+    datetime.strptime(date, '%Y-%m-%d')
     if date in storage.keys():
         storage[date] += number
     else:
