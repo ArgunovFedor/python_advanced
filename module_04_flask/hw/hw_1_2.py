@@ -11,17 +11,18 @@
 from flask import Flask
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField
+from wtforms.validators import DataRequired, Email, NumberRange, Regexp
 
 app = Flask(__name__)
 
 
 class RegistrationForm(FlaskForm):
-    email = StringField()
-    phone = IntegerField()
-    name = StringField()
-    address = StringField()
-    index = IntegerField()
-    comment = StringField()
+    email = StringField(validators=[DataRequired(), Email()])
+    phone = IntegerField(validators=[DataRequired(), NumberRange(1000000000, 9999999999)])
+    name = StringField(validators=[DataRequired()])
+    address = StringField(validators=[DataRequired()])
+    index = IntegerField(validators=[DataRequired()])
+    comment = StringField(validators=[DataRequired()])
 
 
 @app.route("/registration", methods=["POST"])

@@ -14,15 +14,20 @@ Endpoint должен быть по url = /ps и принимать входны
     >>> command = shlex.split(command_str)
     >>> result = subprocess.run(command, capture_output=True)
 """
-from flask import Flask
+import shlex, subprocess
+from flask import Flask, request
 
 app = Flask(__name__)
 
-
 @app.route("/ps", methods=["GET"])
 def _ps():
-    pass
+    flags = request.form.getlist('flags')
+    command_str = f"ps aux {' '.join(flags)}"
+    command = shlex.split(command_str)
+    result = subprocess.run(command, capture_output=True)
+    return f'<pre>{result}</pre>'
 
 
 if __name__ == "__main__":
+    app.config["WTF_CSRF_ENABLED"] = False
     app.run(debug=True)
