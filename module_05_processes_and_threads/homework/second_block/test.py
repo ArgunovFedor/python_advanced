@@ -1,11 +1,16 @@
 import signal
 
-from flask import Flask, request
+from flask import Flask
 import subprocess
 import shlex
 import os
 
 app = Flask(__name__)
+
+
+@app.endpoint('test')
+def test_endpoint():
+    return 'Test endpoint was called!'
 
 
 def check_port_and_run(port: str):
@@ -16,10 +21,9 @@ def check_port_and_run(port: str):
     pid_num = process_list[0].split().index('PID')
     for process in process_list[1:]:
         os.kill(int(process.split()[pid_num]), signal.SIGKILL)
-    return True
-    pass
 
 
 if __name__ == "__main__":
+    print('Убиваем процессы по порту 5000')
     check_port_and_run('5000')
-    app.run(debug=True)
+    result = app.run()
