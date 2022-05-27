@@ -1,6 +1,6 @@
 import unittest
 
-from module_05_processes_and_threads.homework.context_manager import ExceptionContext
+from module_05_processes_and_threads.homework.second_block.context_manager import ExceptionContext
 
 
 def test_function(exc):
