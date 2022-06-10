@@ -18,4 +18,4 @@ class SavedFile:
 
 if __name__ == '__main__':
     with SavedFile('some', 'w') as f:
-        f.undefined('hello')
+        f.write('hello')
