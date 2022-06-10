@@ -5,7 +5,7 @@ import time
 if __name__ == "__main__":
     start = time.time()
     my_process_list = []
-    for pnum in range(5):
+    for pnum in range(1):
         p = subprocess.Popen(['python', 'test_program.py'],
                              stdin=sys.stdin,
                              stderr=sys.stdout,
