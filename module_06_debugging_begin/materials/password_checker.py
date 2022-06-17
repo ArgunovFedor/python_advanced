@@ -13,10 +13,14 @@ def input_and_check_password():
         logger.warning("Вы ввели пустой пароль.")
         return False
 
+    if password in ['!','@','#','$','%','^','&','*','-','+','=','_']:
+        logging.warning('Пароль не подходит, если хотите заново ввести пароль напишите yes')
+        if input() == 'yes':
+            return False
     try:
         hasher = hashlib.md5()
 
-        hasher.update(password.encode("latin-1"))
+        hasher.update(password.encode("utf-32"))
 
         if hasher.hexdigest() == "098f6bcd4621d373cade4e832627b4f6":
             return True
