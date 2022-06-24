@@ -12,4 +12,13 @@ from typing import List, Tuple
 
 
 def check_is_straight_line(coordinates: List[Tuple[float, float]]) -> bool:
-    pass
+    x, y =  coordinates[0][0], coordinates[0][1]
+    for i in range(1, len(coordinates), 1):
+        if i+1 == len(coordinates):
+            return True
+        if (x-coordinates[i][0])/(coordinates[i+1][0]-coordinates[i][0]) != (y-coordinates[i][1])/(coordinates[i+1][1]-coordinates[i][1]):
+            return False
+    return True
+
+print(check_is_straight_line([(0,0), (1,1), (3,3), (10,10)]))
+print(check_is_straight_line([(-1,0), (1,1), (3,3), (10,10)]))

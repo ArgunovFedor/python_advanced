@@ -17,7 +17,25 @@ def log(level: str, message: str) -> None:
 
 Как это сделать? Возможно метод json.dumps поможет вам?
 """
+import datetime
+import json
+import sys
 
 
 def log(level: str, message: str) -> None:
-    pass
+    text = {
+        'time': str(datetime.datetime.utcnow()),
+        'level': level,
+        'message': message
+    }
+    json_object = json.dumps(text, indent=4)
+    with open('skillbox_json_messages.Log', 'a', encoding='utf-8') as file:
+        file.write(json_object)
+
+if __name__ == "__main__":
+    log(level='DEBUG',
+        message='Валар Моргулис'
+        )
+    log(level='WARNING',
+        message='Валар Дохаэрис"'
+        )

@@ -18,9 +18,11 @@ def restore_tree(path_to_log_file: str) -> BinaryTreeNode:
 import itertools
 import logging
 import random
+import re
 from collections import deque
 from dataclasses import dataclass
 from typing import Optional
+
 
 logger = logging.getLogger("tree_walk")
 
@@ -54,7 +56,7 @@ def walk(root: BinaryTreeNode):
                     f"{node!r} right is not empty. Adding {node.right!r} to the queue"
             )
             queue.append(node.right)
-
+    return queue
 
 counter = itertools.count(random.randint(1, 10 ** 6))
 
@@ -72,13 +74,45 @@ def get_tree(max_depth: int, level: int = 1) -> Optional[BinaryTreeNode]:
     return node
 
 
+def restore_tree(path_to_log_file: str) -> BinaryTreeNode:
+    with open(path_to_log_file, 'r') as file:
+        val = re.findall(r"[\d]{6}", file.readline())[0]
+        node = BinaryTreeNode(val, left=False, right=False)
+        nodes_list = [node]
+        current_node = None
+        for row in file.readlines():
+            if re.match(r'INFO.*', row):
+                val = re.findall(r"[\d]{6}", row)[0]
+                current_node = [i for i in nodes_list if i.val == val][0]
+            elif re.match(r'.*left.*', row):
+                val = re.findall(r"[\d]{6}", row)[1]
+                if node.left is False and current_node is None:
+                    node.left = BinaryTreeNode(val)
+                    nodes_list.append(node.left)
+                else:
+                    current_node.left = BinaryTreeNode(val)
+                    nodes_list.append(current_node.left)
+            else:
+                val = re.findall(r"[\d]{6}", row)[1]
+                if node.right is False and current_node is None:
+                    node.right = BinaryTreeNode(val)
+                    nodes_list.append(node.right)
+                else:
+                    current_node.right = BinaryTreeNode(val)
+                    nodes_list.append(current_node.right)
+        return node
+
 if __name__ == "__main__":
     logging.basicConfig(
             level=logging.DEBUG,
             format="%(levelname)s:%(message)s",
-            filename="hw_8_walk_log_4.txt",
+            filename="hw_8_walk_log_5.txt",
     )
 
     root = get_tree(7)
-
     walk(root)
+    restored_root= restore_tree("hw_8_walk_log_5.txt")
+    if root.__sizeof__() == restored_root.__sizeof__():
+        print('Успешно восстановлено')
+    else:
+        print('Что-то пошло не так')

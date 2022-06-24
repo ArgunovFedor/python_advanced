@@ -31,4 +31,28 @@ from typing import List
 
 
 def my_t9(input_numbers: str) -> List[str]:
-    pass
+    count = 0
+    result = ''
+    my_dict = {
+        '2': ['a', 'b', 'c'],
+        '3': ['d', 'e', 'f'],
+        '4': ['g','h','i'],
+        '5': ['j', 'k', 'l'],
+        '6': ['m', 'n', 'p'],
+        '7': ['p', 'q', 'r', 's'],
+        '8': ['t', 'u', 'v'],
+        '9': ['w', 'x', 'y', 'z'],
+        ' ': ['']
+    }
+    while count != len(input_numbers):
+        num = input_numbers[count]
+        inner_count = 0
+        while count < len(input_numbers) and num == input_numbers[count]:
+            inner_count += 1
+            count += 1
+        result = result + my_dict[num][inner_count-1]
+    return result
+
+
+'basement'
+print(my_t9('22 2777733633668'))

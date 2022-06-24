@@ -19,10 +19,16 @@ import hashlib
 import logging
 
 logger = logging.getLogger("password_checker")
-
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+            'v', 'w', 'x', 'y', 'z']
+alphabet_rus = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у',
+                'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я']
 
 def check_if_password_is_weak(password_string: str) -> bool:
-    pass
+    for c in password_string:
+        if c.lower() in alphabet or c.lower() not in alphabet_rus:
+            return True
+    return False
 
 
 def input_and_check_password():
@@ -37,12 +43,13 @@ def input_and_check_password():
         return False
 
     try:
-        hasher = hashlib.md5()
+        hasher = hashlib.sha256()
 
-        hasher.update(password.encode("latin-1"))
-
-        if hasher.hexdigest() == "098f6bcd4621d373cade4e832627b4f6":
-            return True
+        hasher.update(password.encode("utf-8"))
+        print('Хеш нашего пароля:', hasher.hexdigest())
+        # if hasher.hexdigest() == "e98477ede5814ff72d385c7ccb2479fd4cae94546c39241485fac248a15bbf05":
+        #     return True
+        return True
     except ValueError as ex:
         logger.exception("Вы ввели некорректный символ ", exc_info=ex)
 
