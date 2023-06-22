@@ -15,5 +15,5 @@ def total_memory_usage(root_pid: int) -> float:
     return len(res.stdout.splitlines()) - 2
 
 
-process_count('argunov_fm')
+process_count('fargunov')
 total_memory_usage()
