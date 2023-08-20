@@ -36,8 +36,7 @@ def init_db(initial_records: List[dict]) -> None:
                 CREATE TABLE `table_books` (
                     id INTEGER PRIMARY KEY AUTOINCREMENT, 
                     title TEXT, 
-                    author TEXT, 
-                )
+                    author TEXT                )
                 """
             )
             cursor.executemany(
@@ -61,3 +60,16 @@ def get_all_books() -> List[Book]:
             """
         )
         return [Book(*row) for row in cursor.fetchall()]
+
+
+def add_book(title: str, author: str):
+    with sqlite3.connect('table_books.db') as conn:
+        cursor: sqlite3.Cursor = conn.cursor()
+        cursor.execute(
+            """
+            INSERT INTO table_books (title, author)
+            VALUES (?, ?);
+            """,
+            (title, author,)
+        )
+    return (title, author)
