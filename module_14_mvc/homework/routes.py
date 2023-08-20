@@ -3,7 +3,7 @@ from typing import List
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField
 from wtforms.validators import DataRequired, Email, NumberRange, Regexp, InputRequired
-from models import init_db, get_all_books, DATA, add_book
+from models import init_db, get_all_books, DATA, add_book, get_all_books_by_author
 
 app: Flask = Flask(__name__)
 
@@ -57,6 +57,15 @@ def get_books_form() -> str:
             return render_template('add_book.html', form=form)
     else:
         return render_template('add_book.html')
+
+
+@app.route('/books/author')
+def all_books_by_author() -> str:
+    author = request.args.get('author')
+    return render_template(
+        'books_by_author.html',
+        books=get_all_books_by_author(author)
+    )
 
 
 if __name__ == '__main__':
