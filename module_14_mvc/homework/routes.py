@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from typing import List
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField
 from wtforms.validators import DataRequired, Email, NumberRange, Regexp, InputRequired
-from models import init_db, get_all_books, DATA, add_book, get_all_books_by_author
+from models import init_db, get_all_books, DATA, add_book, get_all_books_by_author, get_book_by_id
 
 app: Flask = Flask(__name__)
 
@@ -53,6 +53,7 @@ def get_books_form() -> str:
             book = form.book.data
             if author is not None and book is not None:
                 add_book(author, book)
+                return redirect('http://127.0.0.1:5000/books')
         else:
             return render_template('add_book.html', form=form)
     else:
@@ -65,6 +66,13 @@ def all_books_by_author() -> str:
     return render_template(
         'books_by_author.html',
         books=get_all_books_by_author(author)
+    )
+
+@app.route('/books/<id>')
+def book_by_id(id) ->str:
+    return render_template(
+        'book_by_id.html',
+        book=get_book_by_id(id)
     )
 
 
