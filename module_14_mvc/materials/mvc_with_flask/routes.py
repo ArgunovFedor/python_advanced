@@ -1,7 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from typing import List
 
-from models import init_db, get_all_books, DATA
+from models import init_db, get_all_books, DATA, get_all_books_by_author
 
 app: Flask = Flask(__name__)
 
@@ -41,6 +41,14 @@ def all_books() -> str:
 def get_books_form() -> str:
     return render_template('add_book.html')
 
+
+@app.route('/books/author')
+def all_books_by_author() -> str:
+    author = request.args.get('author')
+    return render_template(
+        'index.html',
+        books=get_all_books_by_author(author)
+    )
 
 if __name__ == '__main__':
     init_db(DATA)
