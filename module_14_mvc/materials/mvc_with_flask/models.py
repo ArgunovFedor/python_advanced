@@ -36,8 +36,7 @@ def init_db(initial_records: List[dict]) -> None:
                 CREATE TABLE `table_books` (
                     id INTEGER PRIMARY KEY AUTOINCREMENT, 
                     title, 
-                    author, 
-                )
+                    author)
                 """
             )
             cursor.executemany(
@@ -59,5 +58,16 @@ def get_all_books() -> List[Book]:
             """
             SELECT * from `table_books`
             """
+        )
+        return [Book(*row) for row in cursor.fetchall()]
+
+
+def get_all_books_by_author(author: str) -> List[Book]:
+    with sqlite3.connect('table_books.db') as conn:
+        cursor: sqlite3.Cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT * from `table_books` where author = ?
+            """, (author, )
         )
         return [Book(*row) for row in cursor.fetchall()]

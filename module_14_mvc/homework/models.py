@@ -10,10 +10,11 @@ DATA: List[dict] = [
 
 class Book:
 
-    def __init__(self, id: int, title: str, author: str) -> None:
+    def __init__(self, id: int, title: str, author: str, counter: int) -> None:
         self.id: int = id
         self.title: str = title
         self.author: str = author
+        self.counter: int = counter
 
     def __getitem__(self, item: str) -> Any:
         return getattr(self, item)
@@ -36,14 +37,14 @@ def init_db(initial_records: List[dict]) -> None:
                 CREATE TABLE `table_books` (
                     id INTEGER PRIMARY KEY AUTOINCREMENT, 
                     title TEXT, 
-                    author TEXT, 
-                )
+                    author TEXT,
+                    counter INTEGER)
                 """
             )
             cursor.executemany(
                 """
                 INSERT INTO `table_books`
-                (title, author) VALUES (?, ?)
+                (title, author, counter) VALUES (?, ?, 0)
                 """,
                 [
                     (item['title'], item['author'])
@@ -61,3 +62,44 @@ def get_all_books() -> List[Book]:
             """
         )
         return [Book(*row) for row in cursor.fetchall()]
+
+
+def add_book(title: str, author: str):
+    with sqlite3.connect('table_books.db') as conn:
+        cursor: sqlite3.Cursor = conn.cursor()
+        cursor.execute(
+            """
+            INSERT INTO table_books (title, author, counter)
+            VALUES (?, ?, ?);
+            """,
+            (title, author, 0)
+        )
+
+def get_all_books_by_author(author: str) -> List[Book]:
+    with sqlite3.connect('table_books.db') as conn:
+        cursor: sqlite3.Cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT * from `table_books` where author = ?
+            """, (author, )
+        )
+        return [Book(*row) for row in cursor.fetchall()]
+
+def get_book_by_id(id):
+    with sqlite3.connect('table_books.db') as conn:
+        cursor: sqlite3.Cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT * from `table_books` where id = ?
+            """, (id, )
+        )
+        book = Book(*cursor.fetchone())
+        book.counter += 1
+        cursor.execute(
+            """
+            UPDATE table_books
+            SET counter = ?
+            WHERE id = ?;
+            """, (book.counter, book.id,)
+        )
+        return book
