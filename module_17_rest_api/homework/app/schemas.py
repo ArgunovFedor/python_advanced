@@ -6,7 +6,7 @@ from models import get_book_by_title, Book
 class BookSchema(Schema):
     id = fields.Int(dump_only=True)
     title = fields.Str(required=True)
-    author = fields.Str(required=True)
+    author = fields.Int(required=True)
 
     @validates('title')
     def validate_title(self, title: str) -> None:
@@ -17,5 +17,12 @@ class BookSchema(Schema):
             )
 
     @post_load
-    def create_book(self, data: dict) -> Book:
+    def create_book(self, data: dict, **kwargs) -> Book:
         return Book(**data)
+
+
+class AuthorSchema(Schema):
+    id = fields.Int(dump_only=True)
+    first_name = fields.Str(required=True)
+    last_name = fields.Str(required=True)
+    middle_name = fields.Str(required=False)
