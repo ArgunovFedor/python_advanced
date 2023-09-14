@@ -1,4 +1,5 @@
 import operator
+
 from flask import Flask
 from flask_jsonrpc import JSONRPC
 
@@ -35,6 +36,99 @@ def add(a: float, b: float) -> float:
     }
     """
     return operator.add(a, b)
+
+
+@jsonrpc.method('calc.subtraction')
+def subtraction(a: float, b: float) -> float:
+    """
+    Пример запроса:
+
+    $ curl -i -X POST -H "Content-Type: application/json; indent=4" \
+        -d '{
+            "jsonrpc": "2.0",
+            "method": "calc.subtraction",
+            "params": {"a": 7.8, "b": 5.3},
+            "id": "1"
+        }' http://localhost:5000/api
+
+    Пример ответа:
+
+    HTTP/1.1 200 OK
+    Server: Werkzeug/2.2.2 Python/3.10.6
+    Date: Fri, 09 Dec 2022 19:00:09 GMT
+    Content-Type: application/json
+    Content-Length: 54
+    Connection: close
+
+    {
+      "id": "1",
+      "jsonrpc": "2.0",
+      "result": 0.5
+    }
+    """
+    return operator.sub(a, b)
+
+
+@jsonrpc.method('calc.multiplication')
+def subtraction(a: float, b: float) -> float:
+    """
+    Пример запроса:
+
+    $ curl -i -X POST -H "Content-Type: application/json; indent=4" \
+        -d '{
+            "jsonrpc": "2.0",
+            "method": "calc.multiplication",
+            "params": {"a": 7.8, "b": 7.3},
+            "id": "1"
+        }' http://localhost:5000/api
+
+    Пример ответа:
+
+    HTTP/1.1 200 OK
+    Server: Werkzeug/2.2.2 Python/3.10.6
+    Date: Fri, 09 Dec 2022 19:00:09 GMT
+    Content-Type: application/json
+    Content-Length: 54
+    Connection: close
+
+    {
+      "id": "1",
+      "jsonrpc": "2.0",
+      "result": 56.94
+    }
+    """
+    return operator.mul(a, b)
+
+
+@jsonrpc.method('calc.division')
+def subtraction(a: float, b: float) -> float:
+    """
+    Пример запроса:
+
+    $ curl -i -X POST -H "Content-Type: application/json; indent=4" \
+        -d '{
+            "jsonrpc": "2.0",
+            "method": "calc.division",
+            "params": {"a": 7.8, "b": 5.3},
+            "id": "1"
+        }' http://localhost:5000/api
+
+    Пример ответа:
+
+    HTTP/1.1 200 OK
+    Server: Werkzeug/2.2.2 Python/3.10.6
+    Date: Fri, 09 Dec 2022 19:00:09 GMT
+    Content-Type: application/json
+    Content-Length: 54
+    Connection: close
+
+    {
+      "id": "1",
+      "jsonrpc": "2.0",
+      "result": 1.0
+    }
+    """
+    return operator.floordiv(a, b)
 
 
 if __name__ == '__main__':
