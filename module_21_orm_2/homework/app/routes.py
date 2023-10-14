@@ -36,6 +36,17 @@ def hand_over_the_book():
     return schema.dump(item, many=True), 200
 
 
+@app.route('/api/book/by_authors/<id>', methods=['GET'])
+def get_by_author_id(id: int):
+    '''
+    получите количество оставшихся в библиотеке книг по автору (GET — входной параметр — ID автора);
+    '''
+    author_id = id
+    schema = BookSchema()
+    item = Book.get_all_books_by_author(author_id=author_id)
+    return schema.dump(item, many=True), 200
+
+
 class BookList(Resource):
     def get(self) -> tuple[list[dict], int]:
         schema = BookSchema()
