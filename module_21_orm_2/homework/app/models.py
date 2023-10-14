@@ -18,7 +18,8 @@ class Book(Base):
     name = Column("name", String, nullable=False)
     count = Column('count', Integer, default=1)
     release_date = Column('release_date', DateTime(timezone=True), nullable=True)
-    author_id = Column('author_id', Integer, ForeignKey('Author.__table__.c.id'), primary_key=True)
+    author_id = Column(ForeignKey("authors.id", ondelete="CASCADE"), nullable=False,
+                       doc="автор", comment="автор")
     author = relationship('Author')
 
     def __repr__(self):
@@ -65,10 +66,10 @@ class ReceivingBook(Base):
     __tablename__ = 'receiving_books'
 
     id = Column("id", Integer, primary_key=True)
-    book_id = Column('book_id', Integer, ForeignKey('Book.__table__.c.id'))
-    book = relationship("Book")
-    student_id = Column('student_id', Integer, ForeignKey('Student.__table__.c.id'))
-    student = relationship("Student")
+    book_id = Column(ForeignKey('books.id'), nullable=False, doc='книга', comment='книга')
+    book = relationship("Book", back_populates='books')
+    student_id = Column(ForeignKey('student.id'), nullable=False, doc='студент', comment='студент')
+    student = relationship("Student", back_populates='students')
     date_of_issue = Column('date_of_issue', DateTime, nullable=False)
     date_of_return = Column('date_of_return', DateTime)
 
