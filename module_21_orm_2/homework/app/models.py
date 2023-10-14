@@ -2,7 +2,7 @@ from datetime import datetime
 
 from sqlalchemy import create_engine, Column, Integer, String, Float, Boolean, DateTime, ForeignKey
 from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import sessionmaker, declarative_base, relationship
+from sqlalchemy.orm import sessionmaker, declarative_base, relationship, mapped_column, Mapped
 
 engine = create_engine("sqlite:///python.db")
 Session = sessionmaker(bind=engine)
@@ -12,15 +12,14 @@ Base = declarative_base()
 
 
 class Book(Base):
-    __tablename__ = 'book'
+    __tablename__ = 'books'
 
-    id = Column("id", Integer, primary_key=True)
+    id: Mapped[int] = mapped_column(primary_key=True)
     name = Column("name", String, nullable=False)
     count = Column('count', Integer, default=1)
     release_date = Column('release_date', DateTime(timezone=True), nullable=True)
-    author_id = Column(ForeignKey("authors.id", ondelete="CASCADE"), nullable=False,
-                       doc="автор", comment="автор")
-    author = relationship('Author')
+    author_id = Column(ForeignKey('authors.id'), nullable=False, doc='автор', comment='автор')
+    author = relationship("Author", back_populates='authors')
 
     def __repr__(self):
         return self.id
@@ -68,7 +67,7 @@ class ReceivingBook(Base):
     id = Column("id", Integer, primary_key=True)
     book_id = Column(ForeignKey('books.id'), nullable=False, doc='книга', comment='книга')
     book = relationship("Book", back_populates='books')
-    student_id = Column(ForeignKey('student.id'), nullable=False, doc='студент', comment='студент')
+    student_id = Column(ForeignKey('students.id'), nullable=False, doc='студент', comment='студент')
     student = relationship("Student", back_populates='students')
     date_of_issue = Column('date_of_issue', DateTime, nullable=False)
     date_of_return = Column('date_of_return', DateTime)
