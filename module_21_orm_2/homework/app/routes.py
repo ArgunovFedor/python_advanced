@@ -1,8 +1,8 @@
 from flask import Flask, request
 from flask_restful import Api, Resource
 
-from module_20_orm_1.homework.app.models import Book, ReceivingBook, Student
-from module_20_orm_1.homework.app.schemas import BookSchema, StudentSchema, ReceivingBookSchema
+from module_21_orm_2.homework.app.models import ReceivingBook, Student, Book
+from module_21_orm_2.homework.app.schemas import StudentSchema, ReceivingBookSchema, BookSchema
 
 app = Flask(__name__)
 api = Api(app)
@@ -44,6 +44,14 @@ def get_by_author_id(id: int):
     author_id = id
     schema = BookSchema()
     item = Book.get_all_books_by_author(author_id=author_id)
+    return schema.dump(item, many=True), 200
+
+
+@app.route('/api/students/<id>/not-reading-books', methods=['GET'])
+def not_reading_books(id: int):
+    student_id = id
+    schema = BookSchema()
+    item = Student.get_not_reading_books(student_id)
     return schema.dump(item, many=True), 200
 
 

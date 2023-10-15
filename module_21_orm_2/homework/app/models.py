@@ -2,7 +2,7 @@ from datetime import datetime
 
 from sqlalchemy import create_engine, Column, Integer, String, Float, Boolean, DateTime, ForeignKey
 from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import sessionmaker, declarative_base, relationship, mapped_column, Mapped
+from sqlalchemy.orm import sessionmaker, declarative_base, mapped_column, Mapped
 
 engine = create_engine("sqlite:///python.db")
 Session = sessionmaker(bind=engine)
@@ -19,7 +19,6 @@ class Book(Base):
     count = Column('count', Integer, default=1)
     release_date = Column('release_date', DateTime(timezone=True), nullable=True)
     author_id = Column(ForeignKey('authors.id'), nullable=False, doc='автор', comment='автор')
-    author = relationship("Author", back_populates='authors')
 
     def __repr__(self):
         return self.id
@@ -27,6 +26,10 @@ class Book(Base):
     @classmethod
     def get_all_books(cls):
         return session.query(Book).all()
+
+    @classmethod
+    def get_all_books_by_author(cls, author_id: int):
+        return session.query(Book).where(Book.author_id == author_id).all()
 
 
 class Author(Base):
@@ -60,15 +63,25 @@ class Student(Base):
     def get_by_id(cls, id):
         return session.query(Student).where(Student.id == id).first()
 
+    @classmethod
+    def get_not_reading_books(cls, student_id):
+        list_of_authors = (session
+                           .query(Book)
+                           .join(Author)
+                           .join(ReceivingBook)
+                           .join(Student)
+                           .where(Student.id == student_id)
+                           )
+        return (session.query(Book).except_(list_of_authors)).all()
 
 class ReceivingBook(Base):
     __tablename__ = 'receiving_books'
 
     id = Column("id", Integer, primary_key=True)
     book_id = Column(ForeignKey('books.id'), nullable=False, doc='книга', comment='книга')
-    book = relationship("Book", back_populates='books')
+    # book = relationship("Book", back_populates='books')
     student_id = Column(ForeignKey('students.id'), nullable=False, doc='студент', comment='студент')
-    student = relationship("Student", back_populates='students')
+    # student = relationship("Student", back_populates='students')
     date_of_issue = Column('date_of_issue', DateTime, nullable=False)
     date_of_return = Column('date_of_return', DateTime)
 
