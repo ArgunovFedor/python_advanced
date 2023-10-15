@@ -35,7 +35,7 @@ class Book(Base):
     def get_avg_book(cls):
         first_day_of_month = datetime.today().replace(day=1)
         return (session.query(ReceivingBook)
-                .where(ReceivingBook.date_of_issue >= first_day_of_month).count())
+                .where(ReceivingBook.date_of_issue >= first_day_of_month).avg())
 
 class Author(Base):
     __tablename__ = 'authors'
@@ -116,6 +116,19 @@ class ReceivingBook(Base):
             item.date_of_return = datetime.utcnow()
         session.commit()
         return items
+
+    @classmethod
+    def get_top_book(cls):
+        '''
+        select book_id, count(*)
+        from receiving_books
+        inner join main.books b on b.id = receiving_books.book_id
+        inner join main.students s on s.id = receiving_books.student_id
+        where average_score > 4
+        group by book_id
+        order by count desc
+        limit 1
+        '''
 
 
 Base.metadata.create_all(bind=engine)
