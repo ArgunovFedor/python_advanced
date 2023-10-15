@@ -55,6 +55,13 @@ def not_reading_books(id: int):
     return schema.dump(item, many=True), 200
 
 
+@app.route('/api/books/get_avg_count_of_book')
+def avg_books():
+    '''
+    получите среднее количество книг, которые студенты брали в этом месяце (GET);
+    '''
+    item = Book.get_avg_book()
+    return {'count': item}, 200
 class BookList(Resource):
     def get(self) -> tuple[list[dict], int]:
         schema = BookSchema()

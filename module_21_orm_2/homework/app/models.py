@@ -31,6 +31,11 @@ class Book(Base):
     def get_all_books_by_author(cls, author_id: int):
         return session.query(Book).where(Book.author_id == author_id).all()
 
+    @classmethod
+    def get_avg_book(cls):
+        first_day_of_month = datetime.today().replace(day=1)
+        return (session.query(ReceivingBook)
+                .where(ReceivingBook.date_of_issue >= first_day_of_month).count())
 
 class Author(Base):
     __tablename__ = 'authors'
