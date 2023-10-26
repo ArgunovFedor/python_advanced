@@ -1,9 +1,8 @@
 import random
 import time
 
-from flask import Flask, request, jsonify
-
 from celery import Celery, group
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 

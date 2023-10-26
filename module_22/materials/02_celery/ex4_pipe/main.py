@@ -1,4 +1,5 @@
 from celery import chain
+
 from tasks import fetch_user_name, greeting_user
 
 task1 = fetch_user_name.s(1)

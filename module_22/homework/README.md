@@ -44,3 +44,19 @@
 - Celery Beat запускается в отдельном процессе.
 - Используется Flower для визуализации и мониторинга задач.
 - Все функции реализованы и работают корректно.
+
+## Command
+
+```
+# Windows
+docker run -p 6379:6379 --name my-redis -d redis
+celery -A celery_tasks.celery worker --pool=solo --loglevel=info --pidfile=''
+```
+
+```bash
+curl -L -X POST 'http://127.0.0.1:5000/blur?email=test@mail.ru' -F 'file=@"******/*****/*****.png"'
+```
+
+```bash
+curl -L -X GET 'http://127.0.0.1:5000/status/9bb632ec-bb4a-4b07-a840-2ad6a04d8cd9'
+```
