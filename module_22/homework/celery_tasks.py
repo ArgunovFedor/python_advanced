@@ -4,10 +4,12 @@
 import os
 
 from celery import Celery
+from celery.schedules import crontab
 from flask import Flask
 
 from image import blur_image
-from mail import send_email, send_email_message
+from mail import send_email, weekly_email
+from models import User
 
 app = Flask(__name__)
 
@@ -26,6 +28,16 @@ def process_image(image_name: str, email: str):
     return f'Image {image_name} processed'
 
 
+@celery.on_after_configure.connect
+def setup_periodic_tasks(sender, **kwargs):
+    sender.add_periodic_task(
+        # crontab(minute='*/1'),
+        crontab(hour='7', minute='30', day_of_week='1'),
+        weekly_mailing.s(),
+    )
+
 @celery.task
-def check_mail(message: str, email: str):
-    send_email_message(message, email)
+def weekly_mailing():
+    victims = User.get_subscribed_users()
+    for user in victims:
+        weekly_email(user.email)

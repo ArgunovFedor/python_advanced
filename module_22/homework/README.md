@@ -51,6 +51,7 @@
 # Windows
 docker run -p 6379:6379 --name my-redis -d redis
 celery -A celery_tasks.celery worker --pool=solo --loglevel=info --pidfile=''
+celery -A celery_tasks.celery beat
 ```
 
 ```bash

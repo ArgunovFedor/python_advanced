@@ -8,6 +8,7 @@ from flask import jsonify, request
 from werkzeug.datastructures import ImmutableMultiDict
 
 from celery_tasks import app, process_image, celery
+from models import User
 
 
 @app.route('/blur', methods=['POST'])
@@ -51,24 +52,24 @@ def status(id):
 
 @app.route('/subscribe', methods=['POST'])
 def subscribe():
-    pass
-
-
-# TODO: Сделать реализицию
-# email = request.args.get('email')
-# if email not in celery.tasks:
-#     celery.add_periodic_task(
-#         crontab(minute=1),
-#         check_mail.s(email, email)
-#     )
-#     return jsonify({'result': True}),200
-# return jsonify({'error': 'Invalid request'}), 500
+    """
+    This is an endpoint get email and subscribe it weekly mailing.
+    """
+    if request.method == 'POST':
+        email = request.args.get("email")
+        user = User.set_user_subscribed(email)
+        return jsonify({'email': user.email, 'is_subscribed': user.is_subscribed}), 200
 
 
 @app.route('/unsubscribe', methods=['POST'])
 def unsubscribe():
-    # TODO: Сделать реализицию
-    pass
+    """
+    This is an endpoint get email and unsubscribe it weekly mailing.
+    """
+    if request.method == 'POST':
+        email = request.args.get("email")
+        user = User.set_user_unsubscribed(email)
+        return jsonify({'email': user.email, 'is_subscribed': user.is_subscribed}), 200
 
 
 app.run()

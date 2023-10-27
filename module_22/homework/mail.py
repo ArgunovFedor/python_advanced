@@ -36,7 +36,7 @@ def send_email(order_id: str, receiver: str, filename: str):
         server.sendmail(SMTP_USER, receiver, text)
 
 
-def send_email_message(order_id: str, receiver: str):
+def weekly_email(receiver: str):
     """
     Отправляет пользователю `receiver` письмо по заказу `order_id` с приложенным файлом `filename`
 
@@ -47,7 +47,7 @@ def send_email_message(order_id: str, receiver: str):
         server.login(SMTP_USER, SMTP_PASSWORD)
 
         email = MIMEMultipart()
-        email['Subject'] = f'Изображения. Заказ №{order_id}'
+        email['Subject'] = f'Просто текст'
         email['From'] = SMTP_USER
         email['To'] = receiver
 
