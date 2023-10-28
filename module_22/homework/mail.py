@@ -34,3 +34,23 @@ def send_email(order_id: str, receiver: str, filename: str):
         text = email.as_string()
 
         server.sendmail(SMTP_USER, receiver, text)
+
+
+def weekly_email(receiver: str):
+    """
+    Отправляет пользователю `receiver` письмо по заказу `order_id` с приложенным файлом `filename`
+
+    Вы можете изменить логику работы данной функции
+    """
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
+        server.starttls()
+        server.login(SMTP_USER, SMTP_PASSWORD)
+
+        email = MIMEMultipart()
+        email['Subject'] = f'Просто текст'
+        email['From'] = SMTP_USER
+        email['To'] = receiver
+
+        text = email.as_string()
+
+        server.sendmail(SMTP_USER, receiver, text)

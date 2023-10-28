@@ -1,4 +1,5 @@
 from celery import group
+
 from tasks import buy_milk, buy_bread
 
 task1 = buy_milk.s(1)

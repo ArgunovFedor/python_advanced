@@ -34,9 +34,12 @@ class TaskQueue:
     def __init__(self):
         self.queue = deque()
 
-    def add_task(self, task: Task) -> None:
+    def add_task(self, task: Task, is_high_priority: bool = False) -> None:
         print('Добавлена задача:', task)
-        self.queue.append(task)
+        if is_high_priority:
+            self.queue.appendleft(task)
+        else:
+            self.queue.append(task)
 
     def execute_tasks(self) -> None:
         while self.queue:
@@ -50,7 +53,7 @@ if __name__ == '__main__':
     queue = TaskQueue()
     queue.add_task(Task(
         func=time.sleep,
-        args=(1,)
+        args=(1,),
     ))
     queue.add_task(Task(
         func=print,
@@ -60,5 +63,5 @@ if __name__ == '__main__':
     queue.add_task(Task(
         func=math.factorial,
         args=(50,)
-    ))
+    ), is_high_priority=True)
     queue.execute_tasks()

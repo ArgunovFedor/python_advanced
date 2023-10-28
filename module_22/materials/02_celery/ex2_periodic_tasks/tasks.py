@@ -1,7 +1,8 @@
 from random import random
 
-from celery import Celery
 from celery.schedules import crontab
+
+from celery import Celery
 
 app = Celery(
     'tasks',
