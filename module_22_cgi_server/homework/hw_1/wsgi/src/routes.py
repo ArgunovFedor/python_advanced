@@ -1,22 +1,24 @@
 import json
-from datetime import time
-
-from flask import Flask, jsonify
-
-app = Flask(__name__)
+HELLO_WORLD = b"Hello world!\n"
 
 
-@app.route("/hello")
-def say_hello():
-    return json.dumps({"response": "Hello, world!"}, indent=4)
+class Application:
+    view_functions = {}
+
+    def __init__(self, environ, start_response):
+        self.environ = environ
+        self.start = start_response
+
+    def __iter__(self):
+        status = '200 OK'
+        response_headers = [('Content-type', 'text/plain')]
+        self.start(status, response_headers)
+        uri = self.environ['REQUEST_URI'],
+        if uri in ['/hello']:
+            yield HELLO_WORLD
+        else:
+            uri = json.dumps(uri).encode(encoding='utf-8')
+            yield uri
 
 
-@app.route("/hello/<name>")
-def say_hello_with_name(name: str):
-    return json.dumps({"response": f"Hello, {name}!"}, indent=4)
-
-
-@app.route('/long_task')
-def long_task():
-    time.sleep(300)
-    return jsonify(message='We did it!')
+application = Application
