@@ -1,5 +1,6 @@
 import json
 import logging
+import time
 
 logging.basicConfig(level=logging.INFO)
 logger: logging.Logger = logging.getLogger(__name__)
@@ -17,23 +18,31 @@ class Application:
             return "405 Method not allowed"
         logger.info(f'{self.path_list[1:2]} self.path_list[1:2]')
         if "hello" in self.path_list[1:2]:
-            return "200 OK"
-        return "404 Not found"
+            return "200 OK", 'hello'
+        elif 'long_task' in self.path_list[1:2]:
+            return "200 OK", 'long_task'
+        return "404 Not found", None
 
-    def get_body(self, status):
+    def get_body(self, status, path):
         if status != "200 OK":
             data = {"error": "Page not found"}
         else:
-            if self.path_list[2:3]:
-                username = self.path_list[2]
+            if path == 'hello':
+                if self.path_list[2:3]:
+                    username = self.path_list[2]
+                else:
+                    username = "username"
+                data = {"hello": "hello", "username": username}
+            elif path == 'long_task':
+                time.sleep(300)
+                data = {"message": 'We did it!'}
             else:
-                username = "username"
-            data = {"hello": "hello", "username": username}
+                data = {"message": 'We lose!'}
         return json.dumps(data).encode("utf-8")
 
     def __iter__(self):
-        status = self.set_status()
-        body = self.get_body(status=status)
+        status, path = self.set_status()
+        body = self.get_body(status=status, path=path)
         logger.info(f'return {body} to {self.environ["PATH_INFO"]}')
         headers = [('Content-Type', 'application/json')]
         self.start_response(status, headers)
