@@ -8,6 +8,7 @@ RUN pip install -r /app/requirements.txt
 COPY src/ /app/
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY uwsgi.ini /etc/uwsgi/uwsgi.ini
+COPY ./static /usr/share/nginx/html/static
 COPY supervisord.ini /etc/supervisor/conf.d/supervisord.ini
 
 
