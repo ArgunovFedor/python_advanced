@@ -24,8 +24,8 @@ class ClientParking(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     client_id = db.Column(db.Integer, db.ForeignKey('client.id'), unique=True)
     parking_id = db.Column(db.Integer, db.ForeignKey('parking.id'))
-    time_in = db.Column(db.DateTime)
-    time_out = db.Column(db.DateTime)
+    time_in = db.Column(db.DateTime, default=None)
+    time_out = db.Column(db.DateTime, default=None)
 
     def to_json(self) -> Dict[str, Any]:
         return {c.name: getattr(self, c.name) for c in
