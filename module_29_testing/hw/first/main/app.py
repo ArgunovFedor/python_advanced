@@ -2,23 +2,22 @@ import datetime
 
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from typing import List
-from sqlalchemy.orm import DeclarativeBase
 
 db = SQLAlchemy()
 
 
 def create_app():
     app = Flask(__name__)
-    app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///python.db'
+    app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///parking.db'
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
-    with app.app_context():
-        db.drop_all()
-        db.create_all()
-    from module_29_testing.hw.first.main.Clients.models import Client, ClientParking
-    from module_29_testing.hw.first.main.Parkings.models import Parking
 
+    from .Clients.models import Client, ClientParking
+    from .Parkings.models import Parking
+
+    @app.before_request
+    def before_request_func():
+        db.create_all()
 
     @app.teardown_appcontext
     def shutdown_session(exception=None):
@@ -39,11 +38,6 @@ def create_app():
 
         return '', 201
 
-    @app.before_request
-    def before_request_func():
-        db.drop_all()
-        db.create_all()
-
     @app.route("/clients", methods=['GET'])
     def get_clients_handler():
         """Список всех клиентов"""
@@ -55,8 +49,10 @@ def create_app():
     def get_user_handler(client_id: int):
         """Получение клиента по ид"""
         client: Client = db.session.query(Client).get(client_id)
-        return jsonify(client.to_json()), 200
-
+        if client is not None:
+            return jsonify(client.to_json()), 200
+        else:
+            return "Client not found", 404
     @app.route("/parkings", methods=['POST'])
     def create_parkings_handler():
         """Создание нового продукта пользователя"""

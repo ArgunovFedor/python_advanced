@@ -1,13 +1,14 @@
-from module_29_testing.hw.first.main.app import db
+from ..app import db
 from typing import Dict, Any
 
 
 class Parking(db.Model):
-    #__tablename__ = 'parkings'
+    __tablename__ = 'parking'
+
     id = db.Column(db.Integer, primary_key=True)
-    address = db.Column(db.String(100), nullable=True)
-    opened = db.Column(db.Boolean, nullable=False)
-    count_places = db.Column(db.Integer,  nullable=False)
+    address = db.Column(db.String(100), nullable=False)
+    opened = db.Column(db.Boolean)
+    count_places = db.Column(db.Integer, nullable=False)
     count_available_places = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
